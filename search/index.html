@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>search</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="../lib/underscore.js"></script>
+    <script src="../lib/backbone.js"></script>
+</head>
+<body>
+    <div class="search">
+        <input type="text">
+        <button>search</button>
+    </div>
+    <script>
+        var Search = Backbone.Model.extend({
+            defaults: {
+                "search": "search",
+                "result": []
+            },
+            initialize: function() {
+                console.log('xxx');
+            }
+        });
+        var search = new Search();
+    </script>
+</body>
+</html>
