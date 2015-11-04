@@ -1,0 +1,49 @@
+* {
+    padding: 0;
+    margin: 0;
+}
+.fl {
+    float: left;
+}
+.fr {
+    float: right;
+}
+.oh {
+    overflow: hidden;
+}
+a {
+    text-decoration: none;
+}
+.music {
+    width: 436px;
+    height: 504px;
+    background: #e4e9ea;
+    border-radius: 20px;
+    margin: 0 auto;
+}
+.music-cover {
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+    background-repeat: left top;
+    height: 158px;
+}
+.music-body {
+    color: #354257;
+    padding: 64px 36px 18px 36px;
+}
+.music-info {
+
+}
+.music-title {
+    width: 250px;
+    overflow: hidden;
+}
+.music-name {
+    font-size: 30px;
+}
+.music-icon, .music-icon a {
+    color: #c2c8ce;
+}
+
+
+/**/
