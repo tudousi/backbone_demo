@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>demo</title>
+    <link rel="stylesheet" href="http://localhost:8082/demo/style.css">
+    <script src="http://localhost:8082/lib/jquery-1.11.3.min.js"></script>
+    <script src="http://localhost:8082/lib/underscore.js"></script>
+    <script src="http://localhost:8082/lib/backbone.js"></script>
+</head>
+<body>
+    <div class="search">
+        <input type="text">
+        <button>search</button>
+    </div>
+    <script>
+        var Routers = Backbone.Router.extend({
+            routes: {
+                "" : "index",
+                "/teams" : "getTeams",
+                "/teams/:country" : "getTeamsCountry",
+                "/teams/:country/:name" : "getTeam",
+                "*error" : "fourOfour"
+            },
+            index: function(){
+                // Homepage
+                console.log('index')
+            },
+
+            getTeams: function() {
+               // List all teams
+               console.log('getTeams')
+            },
+            getTeamsCountry: function(country) {
+               // Get list of teams for specific country
+               console.log('getTeamsCountry')
+            },
+            getTeam: function(country, name) {
+               // Get the teams for a specific country and with a specific name
+               console.log('getTeam')
+            },
+            fourOfour: function(error) {
+               // 404 page
+               console.log('fourOfour')
+            }
+        });
+        var router = new Routers();
+        Backbone.history.start({pushState : true});
+    </script>
+</body>
+</html>

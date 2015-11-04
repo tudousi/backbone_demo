@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <title>search</title>
     <link rel="stylesheet" href="style.css">
+    <script src="../lib/jquery-1.11.3.min.js"></script>
     <script src="../lib/underscore.js"></script>
     <script src="../lib/backbone.js"></script>
 </head>
@@ -15,14 +16,18 @@
     <script>
         var Search = Backbone.Model.extend({
             defaults: {
-                "search": "search",
                 "result": []
-            },
-            initialize: function() {
-                console.log('xxx');
             }
         });
-        var search = new Search();
+        var Collection = Backbone.Collection.extend({
+            model: Search,
+            initialize: function(){
+                console.log('collection init');
+            },
+            url: "http://localhost:8082/data/search.json"
+        })
+        var collection = new Collection();
+        collection.fetch();
     </script>
 </body>
 </html>

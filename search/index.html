@@ -15,14 +15,21 @@
     <script>
         var Search = Backbone.Model.extend({
             defaults: {
-                "search": "search",
                 "result": []
             },
             initialize: function() {
-                console.log('xxx');
+
             }
         });
-        var search = new Search();
+        var Collection = Backbone.Collection.extend({
+            model: Search,
+            url: "http://localhost:8082/data/search.json",
+            initialize: function(){
+                console.log('collection init');
+            }
+        })
+        var collection = new collection();
+        collection.fetch();
     </script>
 </body>
 </html>
