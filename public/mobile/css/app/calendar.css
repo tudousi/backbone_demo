@@ -1,0 +1,86 @@
+.calendar {
+    position: relative;
+}
+.calendar * {
+    margin: 0;
+    padding: 0;
+}
+.calendar table {
+    border-collapse: collapse;
+    border-spacing: 0;
+    text-align: center;
+    width: 100%;
+}
+/*日期头*/
+.calendar .calendar-head {
+    line-height: 39px;
+    font-size: 18px;
+    font-family: arial;
+    background-color: #fff;
+    position: relative;
+    text-align: center;
+}
+.calendar .calendar-head h5 {
+    width: 80%;
+    margin: 0 auto;
+}
+.calendar .calendar-head span {
+    color: #25a4bb;
+}
+.calendar .prev-month,
+.calendar .next-month {
+    position: absolute;
+    top: 50%;
+    margin-top: -12px;
+}
+.calendar .prev-month {
+    left: 0;
+}
+.calendar .next-month {
+    right: 0;
+}
+.calendar .weeks th {
+    padding: 6px 0;
+    border-bottom: 1px solid #d9d9d9;
+}
+.calendar tbody td {
+    height: 40px;
+}
+.calendar tbody td.notmonth {
+    color: gray;
+}
+/*周末样式*/
+.calendar tbody td.weekend {
+    color: #ff9036;
+}
+/*今天*/
+.calendar tbody td.today {
+    color: #25a4bb;
+}
+.calendar tbody td.selectDay {
+    background: #0097a7;
+    color: #fff;
+}
+.calendar tbody td.today p {
+    font-size: 14px;
+}
+
+/*月*/
+.calendar .calendar-month {
+    display: none;
+    position: absolute;
+    top: 39px;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+.calendar .select-month {
+    background: #0097a7;
+    color: #fff;
+}
+
+
+
+
+
+/**/
