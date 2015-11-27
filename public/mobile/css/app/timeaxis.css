@@ -1,0 +1,96 @@
+#timeaxis {
+    height: 96px;
+}
+.timeaxis-wrap {
+    position: fixed;
+    left: 0;
+    right: 0;
+    top: 0;
+    width: 100%;
+    z-index: 10;
+    /*height: 96px;*/
+    height: 48px;
+    color: #999;
+    background: #2d3845;
+    -webkit-transform: translateZ(0);
+}
+/**
+width: 3750px;
+transform: translate3d(-1650px, 0px, 0px);
+*/
+.timeaxis-bar {
+    position: relative;
+    z-index: 19;
+    height: 100%;
+}
+.timeaxis-current {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 40%;
+    right: 40%;
+    z-index: 18;
+    background: #fc353a;
+}
+.timeaxis-current:after {
+    content: "";
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    z-index: 18;
+    display: block;
+    height: 0;
+    width: 0;
+    margin: auto;
+    border-top: 14px solid #fc353a;
+    border-left: 18px solid rgba(0, 0, 0, 0);
+    border-right: 18px solid rgba(0, 0, 0, 0);
+}
+.timeaxis-bar .timeaxis-item, .timeaxis-bar {
+    display: -webkit-box;
+}
+.timeaxis-bar .timeaxis-item {
+    /**/
+    /*width: 150px;*/
+    width: 64px;
+    -webkit-box-align: center;
+    -webkit-box-pack: center;
+}
+/*当前*/
+.timeaxis-bar .timeaxis-item.timeaxis-active {
+    position: relative;
+    color: #fff;
+}
+.timeaxis-bar .timeaxis-item .timeaxis-time {
+    margin: 0 auto 4px;
+    /*font-size: 32px;*/
+    font-size: 16px;
+    font-weight: 700;
+}
+.timeaxis-bar .timeaxis-item .timeaxis-info, .timeaxis-bar .timeaxis-item .timeaxis-time {
+    position: relative;
+    z-index: 19;
+    text-align: center;
+}
+.timeaxis-bar .timeaxis-item .timeaxis-info {
+    /*ont-size: 22px;*/
+    font-size: 11px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/**/

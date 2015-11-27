@@ -195,7 +195,7 @@ define(['zepto'], function() {
         }
         return false;
     };
-    // 检测遍历的日历是否等于今天
+    // 检测遍历的日历是否等于选择时间
     calendar.prototype.selectDay = function(date) {
         var currentDate = this.opts.currentDate;
         if(
