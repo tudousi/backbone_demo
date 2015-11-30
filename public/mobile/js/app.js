@@ -17,7 +17,7 @@ require(['app/slide'], function(slide) {
             {src:'images/slide/7.jpg', href: 'http://www.itrip.com'},
         ],
         change: function(index) {
-            $('.log').append('<p style="margin:0;">当前展示：' + index + '</p>');
+            $('.log').append('<p>当前展示：' + index + '</p>');
         }
     });
 

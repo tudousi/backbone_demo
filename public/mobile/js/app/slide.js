@@ -2,7 +2,9 @@ define(['zepto', 'touch'], function(zepto, touch) {
     var slide = function(opts) {
         this.opts = {
             speed: 0.15625,                            // 滑动切换slide的距离
-            change: function(){}
+            time: 3000,                                // 3秒切换一次slide
+            auto: false,                               // 自动开始，默认false
+            change: function(){}                       // slide被更改后触发函数
         };
         $.extend(this.opts, opts);
         opts = this.opts;
@@ -16,6 +18,7 @@ define(['zepto', 'touch'], function(zepto, touch) {
         // 私有变量
         var change = false;
         var self = this;
+        var timer = null;
 
         this.init = function() {
             var container = $('<div/>').addClass('slide-container');
@@ -38,6 +41,22 @@ define(['zepto', 'touch'], function(zepto, touch) {
             this.wrap = opts.el.find('.slide-wrap')[0];
             this.slideItemCount = opts.el.find('.slide-item').length;
             this.nav = opts.el.find('.nav-container li');
+
+            if(opts.auto) {
+                setInterval(function() {
+                    duration(self.wrap, 350);
+                    self.index++;
+                    console.log(self.slideItemCount);
+                    if(self.index > self.slideItemCount - 1) {
+                        self.index = 0;
+                        self.cx = 0;
+                    } else {
+                        self.cx -= self.slideWidth;
+                    }
+                    switchSlide();
+                }, opts.time);
+            }
+
         };
         // 绑定各种事件
         this.bindEvents = function() {
@@ -81,9 +100,7 @@ define(['zepto', 'touch'], function(zepto, touch) {
             }
             self.index --;
             self.cx += self.slideWidth;
-            setNav();
-            transform(self.wrap, self.cx);
-            opts.change.call(self, self.index);
+            switchSlide();
         }
         // 向左切换，下一个slide
         function next() {
@@ -93,6 +110,10 @@ define(['zepto', 'touch'], function(zepto, touch) {
             }
             self.index ++;
             self.cx -= self.slideWidth;
+            switchSlide();
+        }
+        // 切换函数
+        function switchSlide() {
             setNav();
             transform(self.wrap, self.cx);
             opts.change.call(self, self.index);
