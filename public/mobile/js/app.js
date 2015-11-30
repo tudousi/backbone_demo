@@ -4,8 +4,26 @@ require.config({
         app: '../app'
     }
 });
-require(['app/timeaxis'], function(timeaxis) {
+require(['app/slide'], function(slide) {
+    var s = new slide({
+        el: '.slide-box',
+        data: [
+            {src:'images/slide/1.jpg', href: 'http://www.itrip.com'},
+            {src:'images/slide/2.jpg', href: 'http://www.itrip.com'},
+            {src:'images/slide/3.jpg', href: 'http://www.itrip.com'},
+            {src:'images/slide/4.jpg', href: 'http://www.itrip.com'},
+            {src:'images/slide/5.jpg', href: 'http://www.itrip.com'},
+            {src:'images/slide/6.jpg', href: 'http://www.itrip.com'},
+            {src:'images/slide/7.jpg', href: 'http://www.itrip.com'},
+        ],
+        change: function(index) {
+            $('.log').append('<p style="margin:0;">当前展示：' + index + '</p>');
+        }
+    });
 
+});
+/*
+require(['app/timeaxis'], function(timeaxis) {
     var t = new timeaxis({
         el: '.timeaxis',
         time: [
@@ -38,6 +56,7 @@ require(['app/timeaxis'], function(timeaxis) {
         t.start('14:00');
     });
 });
+*/
 /*
 require(['app/calendar'], function(calendar) {
     var c = new calendar({

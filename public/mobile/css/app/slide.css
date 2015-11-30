@@ -1,3 +1,7 @@
+.slide-container * {
+    margin: 0;
+    padding: 0;
+}
 .slide-container {
     height: 154.453px;
     position: relative;
@@ -34,6 +38,7 @@
     height: 4px;
     border: 1px solid #fff;
     border-radius: 50%;
+    margin-right: 6px;
 }
 .nav-container li.current {
     background: #fff;
